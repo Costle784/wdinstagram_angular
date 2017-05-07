@@ -29,3 +29,9 @@ If you're feeling frisky add some custom directives
 ## Super Bonus
 
 Integrate your Angular code into the Rails API's codebase, so its just one big app.
+
+
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script> -->
