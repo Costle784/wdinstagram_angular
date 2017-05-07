@@ -1,17 +1,24 @@
 (function(){
-  angular.module("wdinstagram", ["ui.router"])
-    .config(["$stateProvider", RouterFunction])
-    .controller("InstagramController", ["$stateParams",
-      InstagramControllerFunction
-    ])
-    function RouterFunction($stateProvider){
-      $stateProvider
-      .state("postIndex", {
-        url: "/:postindex",
-        templateUrl: "js/posts/index.html"
-      });
-    }
+  angular.module("wdinstagram", [
+  "ui.router"
+  ])
+  .config([
+    "$stateProvider",
+    RouterFunction
+  ]);
 
+  function RouterFunction($stateProvider){
+    $stateProvider
+    .state("postIndex", {
+      url: "/postindex",
+      templateUrl: "js/posts/index.html"
+    })
+    .state("postShow", {
+      url:"/postindex/:id",
+      templateUrl: "js/posts/show.html"
+    });
+  }
+})();
 
 
     // function InstagramControllerFunction ($stateParams) {
@@ -49,4 +56,3 @@
     //   },
 
     // }
-})()
