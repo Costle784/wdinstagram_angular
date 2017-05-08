@@ -7,22 +7,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-resource.min.js"></script>
-    <!-- <script src='js/posts/posts.module.js'></script> -->
+    <script src='js/posts/posts.module.js'></script>
+    <script src='js/posts/index.controller.js'></script>
     <script src='js/app.js'></script>
+    <script>
+      var posts = [{
+        img:'http://www.fillmurray.com/200/300',
+        author: 'Bill Murray',
+        body: 'Look at this awesome face'
+      },{
+        img:'https://www.placecage.com/200/300',
+        author:'Nic Cage',
+        body:"I'm the best"
+      },{
+        img: 'https://www.placecage.com/g/200/300',
+        author:'Nic Cage',
+        body: 'I look really stupid here'
+      },{
+        img: 'https://www.stevensegallery.com/200/300',
+        author:'Steven Segal',
+        body:'Take a look at me now!'
+      },{
+        img:'https://www.stevensegallery.com/g/200/300',
+        author:'Steven Segal',
+        body:'Boo!'
+      }]
+    </script>
   </head>
   <body>
     <h1>WDInstagram</h1>
-     <div ui-view>
+    <a ui-sref='postIndex'><h2>Home</h2></a>
+    <div ui-view></div>
 
-    </div>
-    <!-- <h1>WDInstagram</h1> -->
-    <!-- <div ng-repeat='post in vm.posts'>
-      <img src={{post.img}}>
-      <p>{{post.author}}</p>
-      <p>{{post.body}}</p>
-      <hr>
-    </div> -->
-      <!-- <form>
+
+
+
+    <!-- <form>
         <p><label>Img url: <input type='text' ng-model='vm.img'> </label></p>
         <p><label>Author: <input type='text' ng-model='vm.author'> </label></p>
         <p><label>Body: <input type='text' ng-model='vm.body'> </label></p>
