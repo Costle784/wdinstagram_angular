@@ -61,4 +61,12 @@
     });
   }
 
+  function PostsIndexControllerFunction() {
+    this.posts = PostFactory.query();
+    }
+  }
+
+
+
+
 }());
