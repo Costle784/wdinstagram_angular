@@ -1,16 +1,5 @@
-<button ng-click="showtextfields = !showtextfields">Add Post</button>
-
-<form ng-show = 'showtextfields'>
-  <p><label>Img url: <input type='text' ng-model='vm.img'> </label></p>
-  <p><label>Author: <input type='text' ng-model='vm.author'> </label></p>
-  <p><label>Body: <input type='text' ng-model='vm.body'> </label></p>
-  <p><button ng-click='vm.addPost()'>Submit</button></p>
-</form>
-
-
-<div ng-repeat='post in vm.posts'>
-  <a ui-sref="postShow({id: $index})"><img src={{post.img}}></a>
-  <a ui-sref='#'></a>
+<div data-ng-repeat='post in vm.posts'>
+  <a data-ui-sref="postShow({id: post.id})"><img src={{post.photo_url}}></a>
   <p>{{post.author}}</p>
   <p>{{post.body}}</p>
   <hr>

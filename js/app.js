@@ -1,3 +1,5 @@
+"use strict";
+
 (function(){
   angular.module("wdinstagram", [
   "ui.router",
@@ -52,21 +54,34 @@
     templateUrl: "js/ng-views/new.html",
     controller: "NewPostController",
     controllerAs: "vm"
-    })
+    });
   }
 
-  function PostFactoryFunction( $resource ){
+  function PostFactoryFunction($resource){
     return $resource("http://localhost:3000/grumbles/:id", {}, {
         update: { method: "PUT" }
     });
   }
-
-  function PostsIndexControllerFunction() {
+  function PostsIndexControllerFunction(PostFactory) {
     this.posts = PostFactory.query();
     }
   }
-
-
-
-
+  function NewPostControllerFunction(PostFactory){
+    this.post = new PostFactory();
+    this.create = function(){
+    this.post.$save()
+    }
+  }
+  function EditPostControllerFunction(PostFactory, $stateParams ){
+    this.post = PostFactory.get({id:$stateParams.id});
+    this.update = function(){
+    this.post.$update({id:$stateParams.id})
+    }
+    this.destroy = function(){
+      this.post.$delete({id: $stateParams.id});
+    }
+  }
+  function PostShowControllerFunction(PostFactory, $stateParams){
+    this.post = PostFactory.get({id: $stateParams.id});
+  }
 }());
