@@ -14,6 +14,7 @@
     PostFactoryFunction
   ])
   .controller("PostsIndexController", [
+    "PostFactory",
     PostsIndexControllerFunction
   ])
   .controller("PostShowController", [
@@ -58,14 +59,12 @@
   }
 
   function PostFactoryFunction($resource){
-    return $resource("http://localhost:3000/grumbles/:id", {}, {
-        update: { method: "PUT" }
-    });
+    return $resource("http://localhost:3000/entries/:id");
   }
   function PostsIndexControllerFunction(PostFactory) {
     this.posts = PostFactory.query();
     }
-  }
+
   function NewPostControllerFunction(PostFactory){
     this.post = new PostFactory();
     this.create = function(){

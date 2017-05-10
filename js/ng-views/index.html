@@ -1,5 +1,5 @@
 <div data-ng-repeat='post in vm.posts'>
-  <a data-ui-sref="postShow({id: post.id})"><img src={{post.photo_url}}></a>
+  <a data-ui-sref="postShow({id: post.id})"><img data-ng-src={{post.photo_url}}></a>
   <p>{{post.author}}</p>
   <p>{{post.body}}</p>
   <hr>
